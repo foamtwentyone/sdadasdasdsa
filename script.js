@@ -38,6 +38,17 @@
         });
     });
 
+    // Save current page as PDF via print dialog
+    var pdfButton = document.getElementById('pdf-button');
+    if (pdfButton) {
+        pdfButton.addEventListener('click', function () {
+            var prevTitle = document.title;
+            document.title = 'Перспективные технологии хранения информации';
+            window.print();
+            setTimeout(function () { document.title = prevTitle; }, 1000);
+        });
+    }
+
     // Glossary live search
     var search = document.getElementById('glossary-search');
     var glossary = document.getElementById('glossary');
